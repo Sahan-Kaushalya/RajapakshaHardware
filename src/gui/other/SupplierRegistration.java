@@ -20,11 +20,13 @@ import javax.swing.table.DefaultTableModel;
  */
 public class SupplierRegistration extends javax.swing.JFrame {
 
-//    private GRN grn;
-//
-//    public void setGrn(GRN grn) {
-//        this.grn = grn;
-//    }
+    private GRN grn;
+
+    String sID = "";
+    
+    public void setGrn(GRN grn) {
+        this.grn = grn;
+    }
     private String companyId;
 
     public void setCompanyId(String companyId) {
@@ -38,6 +40,27 @@ public class SupplierRegistration extends javax.swing.JFrame {
         initComponents();
         this.setIconImage(new ImageIcon(getClass().getResource("/resources/icon/logo.png")).getImage());
         loadSuppliers("first_name", "ASC", "");
+        GenerateID();
+    }
+    
+     private void GenerateID() {
+
+        try {
+            ResultSet resultset = MySQL.executeSearch("SELECT MAX(`id`) AS max_id FROM `supplier`");
+
+            if (resultset.next()) {
+                String maxID = resultset.getString("max_id");
+                if (maxID != null) {
+                    int ID = Integer.parseInt(maxID.replace("SUPP_", ""));
+                    sID = String.format("SUPP_%04d", ID + 1);
+
+                } else {
+                    sID = "SUPP_0001";
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private void loadSuppliers(String column, String orderby, String mobile) {
@@ -52,9 +75,10 @@ public class SupplierRegistration extends javax.swing.JFrame {
 
             while (resultSet.next()) {
                 Vector<String> vector = new Vector<>();
-                vector.add(resultSet.getString("mobile"));
+                vector.add(resultSet.getString("id"));
                 vector.add(resultSet.getString("first_name"));
                 vector.add(resultSet.getString("last_name"));
+                vector.add(resultSet.getString("mobile"));
                 vector.add(resultSet.getString("email"));
                 vector.add(resultSet.getString("company.name"));
 
@@ -66,9 +90,9 @@ public class SupplierRegistration extends javax.swing.JFrame {
         }
 
     }
-//    public JLabel getJlable(){
-//        return jLabel1;
-//    }
+    public JLabel getJlable(){
+        return jLabel1;
+    }
 
     public void setCompanyName(String name) {
         jLabel1.setText(name);
@@ -328,11 +352,11 @@ public class SupplierRegistration extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Mobile", "First Name", "Last Name", "Email", "Company"
+                "ID", "First Name", "Last Name", "Mobile", "Email", "Company"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -353,7 +377,7 @@ public class SupplierRegistration extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 630, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 753, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -433,8 +457,8 @@ public class SupplierRegistration extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(this, "Supplier already registered", "Warning", JOptionPane.WARNING_MESSAGE);
                 } else {
 
-                    MySQL.executeIUD("INSERT INTO `supplier`(`mobile`,`first_name`,`last_name`,`email`,`company_id`)"
-                            + "VALUES ('" + mobile + "','" + fname + "','" + lname + "','" + email + "','" + companyId + "')");
+                    MySQL.executeIUD("INSERT INTO `supplier`(`id`,`mobile`,`first_name`,`last_name`,`email`,`company_id`)"
+                            + "VALUES ('" + sID + "','" + mobile + "','" + fname + "','" + lname + "','" + email + "','" + companyId + "')");
                     reset();
                 }
 
@@ -470,12 +494,12 @@ public class SupplierRegistration extends javax.swing.JFrame {
 
         if (evt.getClickCount() == 2) {
 
-//            if (grn != null) {
-//
-//                grn.getjTextField2().setText(String.valueOf(jTable1.getValueAt(row, 0)));
-//                grn.getjLabel21().setText(String.valueOf(jTable1.getValueAt(row, 1)));
-//                this.dispose();
-//            }
+            if (grn != null) {
+
+                grn.getjTextField2().setText(String.valueOf(jTable1.getValueAt(row, 1)));
+                grn.getjLabel21().setText(String.valueOf(jTable1.getValueAt(row, 0)));
+                this.dispose();
+            }
         }
         try {
 
@@ -608,6 +632,7 @@ public class SupplierRegistration extends javax.swing.JFrame {
         jComboBox1.setSelectedIndex(0);
         loadSuppliers("first_name", "ASC", jTextField2.getText());
         jTextField2.setEnabled(true);
+        GenerateID();
 
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
