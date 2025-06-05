@@ -3,16 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-
-            <file>file:/C:/Users/Yohan%20Silva/OneDrive/Documents/NetBeansProjects/RajapakshaHardware/src/model/Invoice.java</file>
-            <file>file:/C:/Users/Yohan%20Silva/OneDrive/Documents/NetBeansProjects/RajapakshaHardware/src/gui/admin/SalesHistory.java</file>
-            <file>file:/C:/Users/Yohan%20Silva/OneDrive/Documents/NetBeansProjects/RajapakshaHardware/src/gui/admin/Dashboard.java</file>
-            <file>file:/C:/Users/Yohan%20Silva/OneDrive/Documents/NetBeansProjects/RajapakshaHardware/src/gui/other/ProductView.java</file>
-            <file>file:/C:/Users/Yohan%20Silva/OneDrive/Documents/NetBeansProjects/RajapakshaHardware/src/gui/admin/SelectProduct.java</file>
-            <file>file:/C:/Users/Yohan%20Silva/OneDrive/Documents/NetBeansProjects/RajapakshaHardware/src/gui/admin/Invoice.java</file>
-            <file>file:/C:/Users/Welcome/Documents/NetBeansProjects/RHMS/src/gui/other/ProductView.java</file>
+            <file>file:/C:/Users/Welcome/Documents/NetBeansProjects/RHMS/src/gui/other/Stock.java</file>
+            <file>file:/C:/Users/Welcome/Documents/NetBeansProjects/RHMS/src/gui/other/CustomerRegistration.java</file>
+            <file>file:/C:/Users/Welcome/Documents/NetBeansProjects/RHMS/src/model/GRNItem.java</file>
+            <file>file:/C:/Users/Welcome/Documents/NetBeansProjects/RHMS/src/gui/other/Invoice.java</file>
             <file>file:/C:/Users/Welcome/Documents/NetBeansProjects/RHMS/src/gui/admin/Dashboard.java</file>
-
+            <file>file:/C:/Users/Welcome/Documents/NetBeansProjects/RHMS/src/gui/other/GRN.java</file>
+            <file>file:/C:/Users/Welcome/Documents/NetBeansProjects/RHMS/src/gui/other/CompanyRegistration.java</file>
         </group>
     </open-files>
 </project-private>

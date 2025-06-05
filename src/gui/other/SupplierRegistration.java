@@ -482,11 +482,11 @@ public class SupplierRegistration extends javax.swing.JFrame {
 
         int row = jTable1.getSelectedRow();
 
-        jTextField2.setText(String.valueOf(jTable1.getValueAt(row, 0)));
+        jTextField2.setText(String.valueOf(jTable1.getValueAt(row, 3)));
         jTextField3.setText(String.valueOf(jTable1.getValueAt(row, 1)));
         jTextField4.setText(String.valueOf(jTable1.getValueAt(row, 2)));
-        jTextField5.setText(String.valueOf(jTable1.getValueAt(row, 3)));
-        jLabel1.setText(String.valueOf(jTable1.getValueAt(row, 4)));
+        jTextField5.setText(String.valueOf(jTable1.getValueAt(row, 4)));
+        jLabel1.setText(String.valueOf(jTable1.getValueAt(row, 5)));
         
 
 
@@ -501,42 +501,42 @@ public class SupplierRegistration extends javax.swing.JFrame {
                 this.dispose();
             }
         }
-        try {
-
-            ResultSet resultSet = MySQL.executeSearch("SELECT * FROM `grn` INNER JOIN `grn_item`"
-                    + "ON `grn`.`id` = `grn_item`.`grn_id` WHERE `supplier_mobile` = '" + String.valueOf(jTable1.getValueAt(row, 0)) + "'");
-
-            double total = 0;
-
-            HashMap<Integer, Double> grns = new HashMap<>();
-
-            while (resultSet.next()) {
-
-                double qty = resultSet.getDouble("grn_item.qty");
-
-                double buyingPrice = resultSet.getDouble("grn_item.price");
-
-                double itemTotal = qty * buyingPrice;
-                //total =total+itemTotal;
-                total += itemTotal;
-
-                grns.put(resultSet.getInt("grn.id"), resultSet.getDouble("grn.paid_amount"));
-            }
-
-            double totalPaid = 0;
-
-            for (Double paid : grns.values()) {
-
-                // totalPaid+=paid;
-                totalPaid = totalPaid + paid;
-            }
-
-            jLabel9.setText(String.valueOf(grns.size()));
-            jLabel11.setText(String.valueOf(total - totalPaid));
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+//        try {
+//
+//            ResultSet resultSet = MySQL.executeSearch("SELECT * FROM `grn` INNER JOIN `grn_item`"
+//                    + "ON `grn`.`id` = `grn_item`.`grn_id` WHERE `supplier_id` = '" + String.valueOf(jTable1.getValueAt(row, 0)) + "'");
+//
+//            double total = 0;
+//
+//            HashMap<Integer, Double> grns = new HashMap<>();
+//
+//            while (resultSet.next()) {
+//
+//                double qty = resultSet.getDouble("grn_item.qty");
+//
+//                double buyingPrice = resultSet.getDouble("grn_item.price");
+//
+//                double itemTotal = qty * buyingPrice;
+//                //total =total+itemTotal;
+//                total += itemTotal;
+//
+//                grns.put(resultSet.getInt("grn.id"), resultSet.getDouble("grn.paid_amount"));
+//            }
+//
+//            double totalPaid = 0;
+//
+//            for (Double paid : grns.values()) {
+//
+//                // totalPaid+=paid;
+//                totalPaid = totalPaid + paid;
+//            }
+//
+//            jLabel9.setText(String.valueOf(grns.size()));
+//            jLabel11.setText(String.valueOf(total - totalPaid));
+//
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
     }//GEN-LAST:event_jTable1MouseClicked
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed

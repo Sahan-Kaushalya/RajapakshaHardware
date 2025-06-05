@@ -5,6 +5,7 @@
 package gui.main;
 
 import gui.admin.Dashboard;
+import gui.cashier.CDashboard;
 import java.sql.ResultSet;
 import java.util.Random;
 import javax.swing.ImageIcon;
@@ -233,7 +234,8 @@ public class SignIn extends javax.swing.JFrame {
                             ad.setVisible(true);
                            
                         } else {
-
+                            CDashboard cd = new CDashboard(email);
+                            cd.setVisible(true);
                         }
                          this.dispose();
                          dispose();

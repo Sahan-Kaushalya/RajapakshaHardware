@@ -18,11 +18,11 @@ import javax.swing.table.DefaultTableModel;
  */
 public class CustomerRegistration extends javax.swing.JFrame {
 
-//    private Invoice invoice;
-//
-//    public void setInvoice(Invoice invoice) {
-//        this.invoice = invoice;
-//    }
+    private Invoice invoice;
+
+    public void setInvoice(Invoice invoice) {
+        this.invoice = invoice;
+    }
     /**
      * Creates new form CustomerRegistration
      */
@@ -394,12 +394,11 @@ public class CustomerRegistration extends javax.swing.JFrame {
 
         if (evt.getClickCount() == 2) {
 
-//            if (invoice != null) {
-//                invoice.getjTextField2().setText(String.valueOf(jTable1.getValueAt(row, 0)));
-//                invoice.getjLabel6().setText(String.valueOf(jTable1.getValueAt(row, 1)));
-//                invoice.getjTextField4().setText(String.valueOf(jTable1.getValueAt(row, 4)));
-//                this.dispose();
-//            }
+            if (invoice != null) {
+                invoice.getjTextField2().setText(String.valueOf(jTable1.getValueAt(row, 0)));
+                invoice.getjLabel6().setText(String.valueOf(jTable1.getValueAt(row, 1)));
+                this.dispose();
+            }
         }
 
         try {

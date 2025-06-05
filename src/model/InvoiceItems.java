@@ -1,87 +1,88 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package model;
+
+package Model;
 
 /**
  *
  * @author Yohan Silva
  */
+
 public class InvoiceItems {
-    private String stockId;
-    private String productId;
-    private String productName;
-    private double qty;
-    private double price;
+    
+    private String stockID;
+    private String brand;
+    private String name;
+    private String qty;
+    private String sellingPrice;
+    private String mfd;
+    private String exp;
 
-    /**
-     * @return the stockId
-     */
-    public String getStockId() {
-        return stockId;
+ 
+    public String getStockID() {
+        return stockID;
     }
 
-    /**
-     * @param stockId the stockId to set
-     */
-    public void setStockId(String stockId) {
-        this.stockId = stockId;
+   
+    public void setStockID(String stockID) {
+        this.stockID = stockID;
     }
 
-    /**
-     * @return the productId
-     */
-    public String getProductId() {
-        return productId;
+   
+    public String getBrand() {
+        return brand;
     }
 
-    /**
-     * @param productId the productId to set
-     */
-    public void setProductId(String productId) {
-        this.productId = productId;
+    
+    public void setBrand(String brand) {
+        this.brand = brand;
     }
 
-    /**
-     * @return the productName
-     */
-    public String getProductName() {
-        return productName;
+   
+    public String getName() {
+        return name;
     }
 
-    /**
-     * @param productName the productName to set
-     */
-    public void setProductName(String productName) {
-        this.productName = productName;
+  
+    public void setName(String name) {
+        this.name = name;
     }
 
-    /**
-     * @return the qty
-     */
-    public double getQty() {
+    
+    public String getQty() {
         return qty;
     }
 
-    /**
-     * @param qty the qty to set
-     */
-    public void setQty(double qty) {
+   
+    public void setQty(String qty) {
         this.qty = qty;
     }
 
-    /**
-     * @return the price
-     */
-    public double getPrice() {
-        return price;
+  
+    public String getSellingPrice() {
+        return sellingPrice;
     }
 
-    /**
-     * @param price the price to set
-     */
-    public void setPrice(double price) {
-        this.price = price;
+
+    public void setSellingPrice(String sellingPrice) {
+        this.sellingPrice = sellingPrice;
+    }
+
+   
+    public String getMfd() {
+        return mfd;
+    }
+
+    
+    public void setMfd(String mfd) {
+        this.mfd = mfd;
+    }
+
+
+    public String getExp() {
+        return exp;
+    }
+
+   
+    public void setExp(String exp) {
+        this.exp = exp;
     }
 }

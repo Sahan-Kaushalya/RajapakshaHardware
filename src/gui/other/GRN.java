@@ -29,14 +29,19 @@ public class GRN extends javax.swing.JFrame {
     HashMap<String, GRNItem> grnItemMap = new HashMap<>();
     String stockID = "";
 
+    String email;
+
     /**
      * Creates new form GRN
      */
-    public GRN() {
+    public GRN(String email) {
         initComponents();
         genarateGRNid();
-        jLabel3.setText(Dashboard.email);
+        this.email = email;
+        jLabel3.setText(email);
+        System.out.println(email);
         this.setIconImage(new ImageIcon(getClass().getResource("/resources/icon/logo.png")).getImage());
+        reset();
 
     }
 
@@ -313,8 +318,10 @@ public class GRN extends javax.swing.JFrame {
         jFormattedTextField3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
 
         jDateChooser1.setDateFormatString("yyyy-MM-dd");
+        jDateChooser1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
 
         jDateChooser2.setDateFormatString("yyyy-MM-dd");
+        jDateChooser2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -337,7 +344,7 @@ public class GRN extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextField1)
                             .addComponent(jTextField2)
-                            .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
+                            .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -353,7 +360,7 @@ public class GRN extends javax.swing.JFrame {
                                 .addComponent(jLabel7)
                                 .addGap(18, 18, 18)
                                 .addComponent(jFormattedTextField1)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(78, 78, 78)
@@ -375,7 +382,7 @@ public class GRN extends javax.swing.JFrame {
                         .addGap(18, 18, 18)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                             .addComponent(jLabel10)
                             .addGap(59, 59, 59)
                             .addComponent(jLabel11))
@@ -404,8 +411,9 @@ public class GRN extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel2)
                         .addComponent(jLabel3))
-                    .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
@@ -476,7 +484,7 @@ public class GRN extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1325, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -548,7 +556,7 @@ public class GRN extends javax.swing.JFrame {
                             .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jFormattedTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(0, 16, Short.MAX_VALUE))
+                .addGap(0, 28, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -577,12 +585,11 @@ public class GRN extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 942, Short.MAX_VALUE)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(8, 8, 8)))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -609,9 +616,11 @@ public class GRN extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-//        Stock st = new Stock();
-//        st.setVisible(true);
-//        st.setGrn(this);
+
+        ProductView pv = new ProductView(this, true);
+        pv.setGrn(this);
+        pv.setVisible(true);
+
 
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -659,6 +668,7 @@ public class GRN extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "This GRN iteam Already exists with Diffrent Date and Price ", "Error", JOptionPane.ERROR_MESSAGE);
 
             }
+            clearall();
         }
 
     }//GEN-LAST:event_jButton4ActionPerformed
@@ -687,13 +697,12 @@ public class GRN extends javax.swing.JFrame {
 
             String grnNumber = jTextField1.getText();
             String supplierMobile = jLabel21.getText();
-            String employeeEmail = jLabel3.getText();
+            String employeeEmail = email;
             String paidAmount = jFormattedTextField4.getText();
             String date = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
-            MySQL.executeIUD("INSERT INTO `grn` VALUES('" + grnNumber + "','" + supplierMobile + "','" + date + "',"
-                    + "'" + employeeEmail + "','" + paidAmount + "')");
+            MySQL.executeIUD("INSERT INTO `grn` VALUES('" + grnNumber + "','" + date + "','" + supplierMobile + "','" + employeeEmail + "','" + paidAmount + "')");
 
             for (GRNItem grnItem : grnItemMap.values()) {
 
@@ -737,6 +746,8 @@ public class GRN extends javax.swing.JFrame {
                 MySQL.executeIUD("INSERT INTO `grn_item`(`stock_id`,`qty`,`price`,`grn_id`) "
                         + "VALUES('" + sid + "','" + grnItem.getQty() + "','" + grnItem.getBuyingPrice() + "','" + grnNumber + "')");
             }
+
+            reset();
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -794,6 +805,21 @@ public class GRN extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 
+    private void clearall() {
+        jTextField2.setText("");
+        jTextField3.setText("");
+        jLabel3.setText("EMPLOYEE DETAILS");
+        jLabel21.setText("SUPPLIER NAME");
+        jLabel9.setText("PRODUCT BRAND HERE");
+        jLabel11.setText("PRODUCT NAME HERE");
+        jDateChooser1.setDate(null);
+        jDateChooser2.setDate(null);
+        jFormattedTextField1.setText("0");
+        jFormattedTextField2.setText("0.00");
+        jFormattedTextField3.setText("0.00");
+
+    }
+
     private void reset() {
 
         jTextField2.setText("");
@@ -811,6 +837,9 @@ public class GRN extends javax.swing.JFrame {
         jFormattedTextField2.setText("0.00");
         jFormattedTextField3.setText("0.00");
         jFormattedTextField4.setText("0.00");
+        jTable1.clearSelection();
+        ((DefaultTableModel) jTable1.getModel()).setRowCount(0);
+        grnItemMap.clear();
         jTextField2.grabFocus();
         genarateGRNid();
     }
