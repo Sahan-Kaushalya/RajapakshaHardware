@@ -19,7 +19,7 @@ A hardware management system for Rajapaks, designed to streamline inventory, sal
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/RHMS.git
+    git clone https://github.com/Sahan-Kaushalya/RajapakshaHardware.git
     ```
 2. Open the project in NetBeans.
 3. Build and run the application.
