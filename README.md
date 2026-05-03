@@ -2,7 +2,7 @@
 
 ## Rajapaksha Hardware
 
-A hardware management system for Rajapaks, designed to streamline inventory, sales, and customer management processes.
+A hardware management system for Rajapaksha, designed to streamline inventory, sales, and customer management processes.
 
 ## Features
 
