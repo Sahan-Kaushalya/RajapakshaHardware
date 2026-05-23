@@ -4,6 +4,12 @@
 
 A hardware management system for Rajapaksha, designed to streamline inventory, sales, and customer management processes.
 
+---
+
+> 📝 **Project Overview:** > This project was developed as a practical session demonstration for the students of the **Higher National Diploma in Information Technology (HNDIT)** at the **Advanced Technological Institute (ATI) - Gampaha**.
+
+---
+
 ## Features
 
 - Inventory tracking and management
@@ -19,7 +25,7 @@ A hardware management system for Rajapaksha, designed to streamline inventory, s
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/Sahan-Kaushalya/RajapakshaHardware.git
+    git clone [https://github.com/Sahan-Kaushalya/RajapakshaHardware.git](https://github.com/Sahan-Kaushalya/RajapakshaHardware.git)
     ```
 2. Open the project in NetBeans.
 3. Build and run the application.
@@ -33,6 +39,7 @@ A hardware management system for Rajapaksha, designed to streamline inventory, s
 ## Contributing
 
 Contributions are welcome! Please fork the repository and submit a pull request.
+
 <table>
   <tr>
     <td align="center">
@@ -41,7 +48,7 @@ Contributions are welcome! Please fork the repository and submit a pull request.
         <br />
         <sub><b>Sahan Kaushalya</b></sub>
       </a>
-      <br />💻 🎨 📖
+      <br />Developer
     </td>
      <td align="center">
       <a href="https://github.com/Yohan3128">
@@ -49,10 +56,9 @@ Contributions are welcome! Please fork the repository and submit a pull request.
         <br />
         <sub><b>Yohan Silva</b></sub>
       </a>
-      <br />💻 🎨 📖
+      <br />Developer
     </td>
-    <!-- Add more contributors below using the same format -->
-  </tr>
+    </tr>
 </table>
 
 ## License
